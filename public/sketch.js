@@ -58,8 +58,6 @@ function draw(data) {
   // var n = Math.round(Math.random());
   // text(quest[n], width/2, 50);
 
-
-
   text(totalScore / average.length, 50, 475);
 
 
@@ -157,7 +155,6 @@ function keyPressed() {
 
     var img = saveCanvas('images/myCanvas', 'jpg');
     console.log("images saved");
-    //saveCanvas('submission', 'png');
     //window.print();
     window.location.reload();
   }
