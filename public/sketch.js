@@ -14,12 +14,14 @@ var words = [];
 var x = '';
 var average = 0;
 var ts;
-var quest = ["Describe a time when you had control over someone else.", "Describe a time when someone had control over you."];
+// var quest = ["Describe a time when you had control over someone else.", "Describe a time when someone had control over you."];
+
+var width = 1200;
+var height = 500;
 
 var scoredWords = [];
 var totalScore = 0;
 var font;
-
 
 function preload() {
   afinn = loadJSON('AFINN.json');
@@ -28,7 +30,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, 500);
+  createCanvas(width, height);
   background(255);
   socket = io.connect('https://afinn-canvas.herokuapp.com', {
     secure: true
@@ -52,10 +54,10 @@ function draw(data) {
   textSize(15);
   textFont("Helvetica");
   textAlign(CENTER, TOP);
-  
 
-  var n = Math.round(Math.random());
-  text(quest[n], width/2, 50);
+  // var n = Math.round(Math.random());
+  // text(quest[n], width/2, 50);
+
 
 
   text(totalScore / average.length, 50, 475);
@@ -153,9 +155,10 @@ function keyPressed() {
     text(totalScore, 100, 450);
 
 
-    //var img = saveCanvas('images/myCanvas', 'jpg');
-    // save(canvas, "power");
-    window.print();
+    var img = saveCanvas('images/myCanvas', 'jpg');
+    console.log("images saved");
+    //saveCanvas('submission', 'png');
+    //window.print();
     window.location.reload();
   }
 }
