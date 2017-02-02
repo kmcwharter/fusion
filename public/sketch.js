@@ -65,13 +65,13 @@ function draw(data) {
 
   if (keyCode !== RETURN) {
     textAlign(CENTER, BOTTOM);
-    textSize(20 + ((totalScore / average.length)) * 5);
-    fill(0);
+    textSize(25);
+    fill(0, 0, 0, map((data.k / data.h.length), -1, 1, -100, 100));
     text(typing, 50, 120, 540, 300);
 
     textAlign(CENTER, TOP);
-    textSize(map((data.k / data.h.length), -1, 1, -100, 100));
-    fill(255, 0, 0, 80);
+    textSize(15);
+    fill(0, 0, 0, 255-(map((data.k / data.h.length), -1, 1, -100, 100)));
     text(data.b, 50, 220, 540, 300);
 
 
